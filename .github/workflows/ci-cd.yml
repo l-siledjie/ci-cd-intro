@@ -1,7 +1,7 @@
 name: CI/CD
 env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_TOKEN }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_TOKEN }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   push:
     branches:
@@ -43,3 +43,4 @@ jobs:
 
       -  name: Deploy Project Artifacts to Vercel
          run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+         # run: vercel pull --yes --environment=production --token=xf1d61klXkisbmFz6z0xUNEt
